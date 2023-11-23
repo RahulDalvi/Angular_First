@@ -82,4 +82,42 @@ getuserdata(userdata:NgForm){
   this.empdata=userdata;
 }
 
+list:any[]=[];
+
+gettask(task:string){
+
+this.list.push({id:this.list.length, name:task});
+console.warn(this.list);
+}
+
+removetask(id:any){
+  console.warn(id);
+  this.list=this.list.filter(task=>task.id!=id)
+
+}
+
+parantData:number=0;
+parantData1:number=0;
+updateChield(){
+  this.parantData=Math.floor(Math.random()*100);
+  this.parantData1=Math.floor(Math.random()*100);
+}
+
+userChildData=[
+  {name:'rahul Dalvi',phone:'12345'},
+  {name:'rohan Dalvi',phone:'12345'},
+  {name:'rahul Dalvi',phone:'12345'},
+  {name:'rohan Dalvi',phone:'12345'},
+]
+
+childvalue:any []=[];
+
+getparantdata(pdata:any){
+  console.warn(pdata);
+  this.childvalue.push(pdata)
+
+}
+
+twowaybindingvalue:any;
+
 }

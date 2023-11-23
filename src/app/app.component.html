@@ -169,4 +169,46 @@ Else Condition
     <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
   </div>
 
-<h1 style="color: red;">*******Bootstrap used*******</h1><nav></nav>
+<h1 style="color: red;">*******To do list add and remove*******</h1><nav></nav>
+
+<input type="text" placeholder="Enter tak" #task/>
+<button (click)="gettask(task.value)">Add Task</button>
+
+<ul *ngFor="let task of list">
+    <li>
+        {{task.name}} <button (click)="removetask(task.id)">Remove Task</button>
+    </li>
+</ul>
+
+<h1 style="color: red;">*******Data transfer from parant to chaild*******</h1><nav></nav>
+<app-chield [value]="parantData" [value1]="parantData1" ></app-chield>
+
+<button (click)="updateChield()">Update Chield Value</button>
+
+
+<h1 style="color: red;">*******Data transfer from parant to chaild with arry*******</h1><nav></nav>
+<ul *ngFor="let data of userChildData">
+<app-user-child [udata]="data"></app-user-child>
+</ul>
+
+
+<h1 style="color: red;">*******Data transfer from chaild to parant*******</h1><nav></nav>
+<app-chield (getparantdataevent)="getparantdata($event)"></app-chield>
+<h2>{{childvalue}}</h2>
+
+<ul *ngFor="let value of childvalue">
+    <li>{{value}}</li> 
+</ul>
+
+
+<h1 style="color: red;">*******Two way binding*******</h1><nav></nav>
+
+<input type="text" [(ngModel)]="twowaybindingvalue"/>
+{{twowaybindingvalue}}
+
+<h1 style="color: red;">*******templet reference variable #name *******</h1><nav></nav>
+
+<input type="text" placeholder="text" id="12" #box/>
+<input type="text" placeholder= box.type id="12" #box1/>
+
+<button (click)="box.value">click</button>
