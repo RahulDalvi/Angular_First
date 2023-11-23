@@ -1,0 +1,158 @@
+<h1 style="color: red;">*******Header*******</h1>
+<app-header></app-header>
+
+<h1>Hello world</h1>
+
+<h1 style="color: red;">*******Interpoltaion*******</h1>
+<h3>{{title}}</h3> 
+<h3>{{4+5+6}}</h3>
+<h3>{{toget()}}</h3>
+
+
+<h1 style="color: red;">*******Componant*******</h1>
+<app-comp1></app-comp1>
+
+<h1 style="color: red;">*******Componant with inline style*******</h1>
+<app-compwithstyle> </app-compwithstyle>
+
+<h1 style="color: red;">*******Componant with inline templet*******</h1>
+<app-compwithtemplet></app-compwithtemplet>
+
+<h1 style="color: red;">*******Componant with inline style & templet*******</h1>
+<app-compwithboth></app-compwithboth>
+
+<h1 style="color: red;">*******Componant from module ModuleOne*******</h1>
+<app-module-one-comp></app-module-one-comp>
+
+<h1 style="color: red;">*******Function call through alert*******</h1>
+<button (click)="todo('Rahul','rakesh')">Click Me</button>
+
+<h1 style="color: red;">*******Event*******</h1>
+<button (click)="getdata('Rahul')">Click Me</button>
+<br/><br/>
+<input type="test" #text (keyup)="getdata(text.value)" placeholder="keyup event"/>
+<br/><br/>
+<input type="test" #text1 (keydown)="getdata(text1.value)" placeholder="keydown event"/>
+<br/><br/>
+<input type="test" #text2 (keypress)="getdata(text2.value)" placeholder="keypress event"/>
+<br/><br/>
+<input type="test" #text3 (blur)="getdata(text3.value)" placeholder="blur event"/>
+<br/><br/>
+<input type="test" #text4 (input)="getdata(text4.value)" placeholder="input event"/>
+<br/><br/>
+<input type="test" (mouseover)="getdata('over')" placeholder="mouseover event"/>
+<br/><br/>
+<input type="test" (mouseout)="getdata('out')" placeholder="mouseout event"/>
+
+<h1 style="color: red;">*******get input from input test and ptint using event and Interpoltaion*******</h1>
+<input type="text" #value (input)="getval(value.value)" placeholder="write name">
+Your Name: {{name}}
+<br/><br/>
+<input type="text" #value1 placeholder="write name">
+<button (click)="getval1(value1.value)">Click</button>
+Your Name: {{name1}}
+
+
+<h1 style="color: red;">*******Couner using buttons*******</h1>
+<button (click)="counter('plus')">++</button> <br>
+Total: {{count}} <br>
+<Button (click)="counter('minus')">--</Button>
+
+
+
+<h1 style="color: red;">*******Property binding*******</h1>
+<input type="text"  value={{file}} disabled={{disable}}/> <br><br>
+<input type="text"  [value]=file [disabled]=disable />
+<button (click)="press('true')">Disabled true</button>
+<button (click)="press('false')">Disabled false</button>
+
+<h1 style="color: red;">*******if else condition*******</h1>
+<h1 *ngIf="condition=='Rahul1'; then ifblock else elseblock">If Condition</h1>
+<ng-template #ifblock>
+if Condition
+</ng-template>
+<ng-template #elseblock>
+Else Condition
+</ng-template>
+
+<h1 style="color: red;">*******if else if condition*******</h1>
+<ng-template [ngIf]="color==='Red'">
+    <h1 style="color: red;">Red Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='green'">
+    <h1 style="color: green;">green Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+    <h1 style="color: blue;">blue Color</h1>
+</ng-template>
+
+
+<h1 style="color: red;">*******Switch case*******</h1>
+<div [ngSwitch]="weekday">
+    <h2 *ngSwitchCase="'sun'">Sunday</h2>
+    <h2 *ngSwitchCase="'Mon'">Monday</h2>
+    <h2 *ngSwitchCase="'Tue'">Tuesday</h2>
+    <h2 *ngSwitchCase="'Wed'">Wednesday</h2>
+    <h2 *ngSwitchCase="'Thr'">thursday</h2>
+    <h2 *ngSwitchCase="'Fri'">Friday</h2>
+    <h2 *ngSwitchCase="'Sat'">Satuerday</h2>
+    <h2 *ngSwitchDefault>No valied day</h2>
+ </div>
+
+ <h1 style="color: red;">*******For loop*******</h1>
+ <h2 *ngFor="let data of user">name is:{{data}}</h2>
+ <h2 *ngFor="let data1 of userdetail">{{data1.uname}}::{{data1.phone}}</h2>
+
+ <h1 style="color: red;">*******nestade For loop*******</h1>
+
+<ol *ngFor="let user of userdetails">
+<li>Name:<b>{{user.uname}}</b></li>
+<li>Phone:<b>{{user.phone}}</b></li>
+<li>Account:</li>
+        <ul *ngFor="let account of user.account"> 
+        <li><b>{{account}}</b></li>
+        </ul>
+</ol>
+
+<h1 style="color: red;">*******Style binding*******</h1>
+<h1 [style.color]="color1"[style.backgroundColor]="bgcolor">Style binding</h1>
+<br>
+<br>
+<h1 [style.color]="color1"[style.backgroundColor]="bgcolor">{{title}}</h1>
+<button #red name="red" id="pink" (click)="getcolor(red.name,red.id)">Red</button> 
+<button #green (click)="getcolor('green','Blue')">Green</button>
+<button #blue (click)="getcolor('blue','red')">Blue</button>
+
+
+<h1 style="color: red;">*******basic and print the value*******</h1>
+
+<form #basicform="ngForm" (ngSubmit)="getuserdata(basicform.value)">
+    <input type="text" name="username" placeholder="enter username" ngModel/>
+    <br/><br/>
+    <input type="text" name="email" placeholder="enter email" ngModel/>
+    <br/><br/>
+    <input type="text" name="phone" placeholder="enter phone number" ngModel/>
+    <br/><br/>
+    <button>Submit</button>
+
+</form>
+
+<h3>Name: {{empdata.username}}</h3>
+<h3>Email: {{empdata.email}}</h3>
+<h3>Phone: {{empdata.phone}}</h3>
+
+<h1 style="color: red;">*******Bootstrap used*******</h1>
+
+<ngb-alert [dismissible]="false">
+	<strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert> 
+
+<ngb-progressbar class="mb-3" type="success" [value]="25" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="info" [value]="60" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="warning" [value]="75" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="danger" [value]="100" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="primary" [value]="75" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="secondary" [value]="50" ></ngb-progressbar>
+<ngb-progressbar class="mb-3" type="dark" [value]="25" ></ngb-progressbar>
+
+    
