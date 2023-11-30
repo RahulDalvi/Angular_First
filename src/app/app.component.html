@@ -124,7 +124,7 @@ Else Condition
 <button #blue (click)="getcolor('blue','red')">Blue</button>
 
 
-<h1 style="color: red;">*******basic and print the value*******</h1>
+<h1 style="color: red;">*******basic form and print the value*******</h1>
 
 <form #basicform="ngForm" (ngSubmit)="getuserdata(basicform.value)">
     <input type="text" name="username" placeholder="enter username" ngModel/>
@@ -209,6 +209,38 @@ Else Condition
 <h1 style="color: red;">*******templet reference variable #name *******</h1><nav></nav>
 
 <input type="text" placeholder="text" id="12" #box/>
-<input type="text" placeholder= box.type id="12" #box1/>
 
-<button (click)="box.value">click</button>
+
+
+<h1 style="color: red;">*******pipe *******</h1><nav></nav>
+<h1>{{"rahul" | uppercase}}</h1>
+<h1>{{"rahul" | lowercase}}</h1>
+<h1>{{"rahul" | titlecase}}</h1>
+<h1>{{date | date : 'fullDate'| uppercase}}</h1>
+<h1>{{"rahul Dalvi" | slice : 3 : 5}}</h1>
+<h1>{{ pipedata | json | lowercase }}</h1>
+<h1>{{3.123123 | number: '6.1-3'}}</h1>
+<h1>{{100.50 | currency:'INR'}}</h1>
+
+
+<h1 style="color: red;">*******templet driven form *******</h1><nav></nav>
+
+<form #newform="ngForm" (ngSubmit)="tdform(newform.value)">
+    <input type="text" name="email" placeholder="enter email" ngModel/>
+    <br/><br/>
+    <input type="text" name="password" placeholder="enter password" ngModel/>
+    <br/><br/>
+    <button>Submit</button>
+</form>
+
+
+<h1 style="color: red;">*******reactive form *******</h1><nav></nav>
+
+<form [formGroup]="reactformvalue"  (ngSubmit)="reactForm()">
+    <input type="text" name="email" placeholder="enter email" formControlName="username" />
+    <br/><br/>
+    <input type="text" name="password" placeholder="enter password" formControlName="password"/>
+    <br/><br/>
+    <button>Login</button>
+
+</form>

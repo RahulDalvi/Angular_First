@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModuleOneModule } from './module-one/module-one.module';
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { Comp1Component } from './comp1/comp1.component';
@@ -37,6 +37,7 @@ import { UserChildComponent } from './user-child/user-child.component'
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
+    ReactiveFormsModule, 
     
   ],
   providers: [],

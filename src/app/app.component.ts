@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms'
+import {FormGroup,FormControl} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -77,7 +78,7 @@ getcolor(col:string,col2:string){
   this.bgcolor=col2;
 }
 
-empdata:any={};
+empdata:any="";
 getuserdata(userdata:NgForm){
   this.empdata=userdata;
 }
@@ -119,5 +120,22 @@ getparantdata(pdata:any){
 }
 
 twowaybindingvalue:any;
+
+date=Date();
+
+pipedata={n:'rahul',p:10}
+
+tdform(fd:NgForm){
+  console.warn(fd)
+}
+
+reactformvalue = new FormGroup({
+  username : new FormControl(''),
+  password : new FormControl('')
+})
+
+reactForm(){
+console.warn(this.reactformvalue.value);
+}
 
 }
