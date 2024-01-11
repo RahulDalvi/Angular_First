@@ -105,10 +105,10 @@ updateChield(){
 }
 
 userChildData=[
-  {name:'rahul Dalvi',phone:'12345'},
-  {name:'rohan Dalvi',phone:'12345'},
-  {name:'rahul Dalvi',phone:'12345'},
-  {name:'rohan Dalvi',phone:'12345'},
+  {name:'rahul Dalvi',phone:'12345',city:'Mumbai'},
+  {name:'rohan Dalvi',phone:'12345',city:'Mumbai'},
+  {name:'rahul Dalvi',phone:'12345',city:'Mumbai'},
+  {name:'rohan Dalvi',phone:'12345',city:'Mumbai'},
 ]
 
 childvalue:any []=[];
